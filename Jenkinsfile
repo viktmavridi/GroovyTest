@@ -1,11 +1,8 @@
+// This shows a simple build wrapper example, using the AnsiColor plugin.
 node {
-  stage('SampleTryCatch') {
-    try {
-      sh 'exit 1'
+    // This displays colors using the 'xterm' ansi color map.
+    ansiColor('xterm') {
+        // Just some echoes to show the ANSI color.
+        stage "\u001B[31mI'm Red\u001B[0m Now not"
     }
-    catch (exc) {
-      echo 'Something didn't work and got some exceptions'
-      throw
-    }
-  }
 }
